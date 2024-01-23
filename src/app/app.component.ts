@@ -126,23 +126,11 @@ grams: 360,
   let newCurrency = "$";
   let coefficient = 1;
 
-  //   if (currentCurrency === "$") {
-  //     newCurrency = "€";
-  //     coefficient = 0.92;
-  //   }
-  if (this.currency === "$") {
-    newCurrency = "₽";
-    coefficient = 80;
-  } else if (this.currency === "₽") {
-    newCurrency = "BYN";
-    coefficient = 3;
-  } else if (this.currency === "BYN") {
-    newCurrency = "€";
-    coefficient = 0.9;
-  } else if (this.currency === "€") {
-    newCurrency = "¥";
-    coefficient = 6.9;
-  }
+    if (this.currency === "$") {
+      newCurrency = "€";
+      coefficient = 0.92;
+    }
+  
   this.currency = newCurrency;
  
   this.productsData.forEach((item: any) => {
