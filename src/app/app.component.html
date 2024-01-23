@@ -6,17 +6,29 @@
         <nav class="header-nav">
           <ul class="header-nav-list">
             <li class="header-nav-item">
-              <a class="header-nav-link" (click)="scrollTo(why)" href="#">Почему у нас</a>
+              <a class="header-nav-link" (click)="scrollTo(why)" href="#"
+                >Почему у нас</a
+              >
             </li>
             <li class="header-nav-item">
-              <a class="header-nav-link" (click)="scrollTo(products)" href="#">Меню бургеров</a>
+              <a class="header-nav-link" (click)="scrollTo(products)" href="#"
+                >Меню бургеров</a
+              >
             </li>
             <li class="header-nav-item">
-              <a class="header-nav-link" (click)="scrollTo(order)" href="#">Оформление заказа</a>
+              <a class="header-nav-link" (click)="scrollTo(order)" href="#"
+                >Оформление заказа</a
+              >
             </li>
           </ul>
         </nav>
-        <button class="header-nav-currency" id="change-currency" (click)="changeCurrency()">{{currency}}</button>
+        <button
+          class="header-nav-currency"
+          id="change-currency"
+          (click)="changeCurrency()"
+        >
+          {{ currency }}
+        </button>
       </div>
     </header>
 
@@ -28,7 +40,9 @@
         насладиться отличным вкусом наших бургеров. Готовим для вас лучшие
         бургеры в городе из отборной мраморной говядины.
       </p>
-      <button class="btn main-btn" id="main-btn" (click)="scrollTo(products)">Смотреть меню</button>
+      <button class="btn main-btn" id="main-btn" (click)="scrollTo(products)">
+        Смотреть меню
+      </button>
       <img class="main-img" src="./assets/images/main_burger.png" alt="" />
     </main>
   </div>
@@ -63,9 +77,9 @@
         <img class="why-img" src="./assets/images/truck.png" alt="Truck" />
         <h2 class="why-title">Быстрая доставка</h2>
         <p class="why-info">
-          Мы доставляем в пределах МКАД за 30 минут, а если не успеем —
-          доставка бесплатно. Мы тщательно упаковываем наши бургеры, чтобы
-          по дороге они не остыли.
+          Мы доставляем в пределах МКАД за 30 минут, а если не успеем — доставка
+          бесплатно. Мы тщательно упаковываем наши бургеры, чтобы по дороге они
+          не остыли.
         </p>
       </li>
     </ul>
@@ -79,17 +93,23 @@
     <div class="products-carts">
       <ul class="products-list">
         <li class="products-item" *ngFor="let product of productsData">
-          <img class="product-img" src="./assets/images/{{product.image}}" alt="Burger" />
-          <h2 class="product-title">{{product.title}}</h2>
-          <p class="product-info">{{product.text}}</p>
+          <img
+            class="product-img"
+            src="./assets/images/{{ product.image }}"
+            alt="Burger"
+          />
+          <h2 class="product-title">{{ product.title }}</h2>
+          <p class="product-info">{{ product.text }}</p>
           <div class="products-details">
             <div class="product-value">
-              <p class="product-price">{{product.price}} {{currency}}</p>
-              <span class="product-weight">{{product.grams}} гр</span>
+              <p class="product-price">{{ product.price }} {{ currency }}</p>
+              <span class="product-weight">{{ product.grams }} гр</span>
             </div>
             <button class="btn product-btn">
               <div class="product-btnIn">
-                <p class="product-btnText" (click)="scrollTo(order, product)">Заказать</p>
+                <p class="product-btnText" (click)="scrollTo(order, product)">
+                  Заказать
+                </p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -122,19 +142,63 @@
     />
     <form class="order-form" [formGroup]="form">
       <p class="form-info">
-        Заполните все данные и наш менеджер свяжется с вами для
-        подтверждения заказа
+        Заполните все данные и наш менеджер свяжется с вами для подтверждения
+        заказа
       </p>
-      <div class="order-form-input" [class]="{'error': form.get('order')?.invalid && (form.get('order')?.dirty || form.get('order')?.touched) }">
-        <input readonly placeholder="Выберите товар в списке" id="burger" type="text" formControlName="order" />
+      <div
+        class="order-form-input"
+        [class]="{
+          error:
+            form.get('order')?.invalid &&
+            (form.get('order')?.dirty || form.get('order')?.touched)
+        }"
+      >
+        <input
+          readonly
+          placeholder="Выберите товар в списке"
+          id="burger"
+          type="text"
+          formControlName="order"
+        />
       </div>
-      <div class="order-form-input" [class]="{'error': form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched) }">
-        <input placeholder="Ваше имя" id="name" type="text" formControlName="name" />
+      <div
+        class="order-form-input"
+        [class]="{
+          error:
+            form.get('name')?.invalid &&
+            (form.get('name')?.dirty || form.get('name')?.touched)
+        }"
+      >
+        <input
+          placeholder="Ваше имя"
+          id="name"
+          type="text"
+          formControlName="name"
+        />
       </div>
-      <div class="order-form-input" [class]="{'error': form.get('phone')?.invalid && (form.get('phone')?.dirty || form.get('phone')?.touched) }">
-        <input placeholder="Ваш телефон" id="phone" type="text" formControlName="phone" />
+      <div
+        class="order-form-input"
+        [class]="{
+          error:
+            form.get('phone')?.invalid &&
+            (form.get('phone')?.dirty || form.get('phone')?.touched)
+        }"
+      >
+        <input
+          placeholder="Ваш телефон"
+          id="phone"
+          type="text"
+          formControlName="phone"
+        />
       </div>
-      <button class="btn order-btn" id="order-action" (click)="confirmOrder()" [disabled]="!form.valid">Оформить заказ</button>
+      <button
+        class="btn order-btn"
+        id="order-action"
+        (click)="confirmOrder()"
+        [disabled]="!form.valid"
+      >
+        Оформить заказ
+      </button>
     </form>
   </div>
 </section>
