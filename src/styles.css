@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  
+  body {
+    font-family: "Gilroy", sans-serif;
+    background-color: #191411;
+    color: #ffffff;
+  }
+  
+  @font-face {
+    font-family: "Gilroy";
+    src: url("./assets/fonts/Gilroy-Semibold.ttf");
+  }
+  
+  @font-face {
+    font-family: "Merriweather";
+    src: url("./assets/fonts/Merriweather-Black.ttf");
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .title-box {
+    text-align: center;
+  }
+  
+  .section-title {
+    font-family: "Merriweather", serif;
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 80px;
+    letter-spacing: 1.92px;
+    text-transform: uppercase;
+    /* margin-left: 89px; */
+  }
+  
+  .btn {
+    color: #191411;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border-radius: 8px;
+    background: linear-gradient(95.61deg, #DA8023 0%, #E2B438 100%);
+    
+    border-style: none;
+    cursor: pointer;
+  }
+  
+  .btn:hover,
+  .btn:focus {
+    background: #e2b438;
+  }
+
+  .btn:disabled {
+    background: #343434;
+    cursor: not-allowed;
+    color: gray;
+  }
